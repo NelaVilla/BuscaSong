@@ -19,8 +19,5 @@ export default {
   }
 };
 </script>
-<style lang="scss">
-#app{
- background-color: #ecf4f3;
-}
+<style src="@/assets/scss/main.scss"  lang="scss">
 </style>

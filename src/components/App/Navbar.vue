@@ -1,10 +1,10 @@
 <template>
   <div>
-       <b-navbar toggleable="lg" type="dark" variant="info">
+       <b-navbar toggleable="lg" class="navbar" type="dark">
    <b-navbar-brand>
             <img
-              src="@/assets/img/logo-buscasong.png"
-              class="d-inline-block align-top"
+              src="@/assets/img/logo-buscasongfinal.png"
+              class="navbar__logo" 
               alt="BuscaSong"
             />
             
@@ -54,10 +54,7 @@ export default {
   },
 };
 </script>
-<style lang="scss">
-img{
-    width: 100px;
-    height: 100px;
-}
-    
+<style src="@/assets/scss/main.scss"  lang="scss">
+
 </style>
+

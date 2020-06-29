@@ -6,9 +6,9 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
     state: {
-      cancion: "",
-      name: "",
-      bio:""
+      cancion:'',
+      name:'',
+      bio:''
     },
     mutations: {
       SET_CANCION(state, cancion) {

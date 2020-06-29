@@ -1,0 +1,27 @@
+.ingreso{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 10% 0 10%;
+
+    &__titulo{
+font-family: $libre-bask;    
+}
+
+    &__logo{
+        border-radius: 20px;
+        width: 10em;
+        height: 10em;
+    }
+    &__input{
+        font-family:$over-lock;
+        text-align: center;
+        background-color: $pistacho;
+        
+    }
+    &__botones{
+        margin-top: 2%;
+    }
+    
+}

@@ -2,11 +2,13 @@
   <div id="barrabusqueda">
     <!--Inputs y botons para buscar-->
     <b-container >
+     
       <b-row class="busqueda__inputs" >
         <b-col>
       <b-form-input
         v-model="lyric"
         placeholder="Escribe el nombre de la canción"
+        class="busqueda__inputs--input"
       ></b-form-input>
       </b-col>
 
@@ -14,23 +16,24 @@
       <b-form-input
        v-model="artist"
         placeholder="Escribe el nombre del artista o grupo"
+        class="busqueda__inputs--input"
       ></b-form-input>
       </b-col>
       </b-row>
       <!--Boton buscar-->
-      <b-row class="busqueda__botones" align-h="center">
-      <b-button variant="outline-primary" @click="buscar()" class="busqueda__boton"
-        >Buscar</b-button>
-        <b-button variant="outline-primary" @click="infoArtista()" class="busqueda__boton"
+      <b-row class="busqueda__botones" align-h="center"  >
+      <b-button pill class="busqueda__botones--boton" @click="buscar()" 
+        >Encuentra la canción</b-button>
+        <b-button pill class="busqueda__botones--boton" @click="infoArtista()"
         >Información sobre el artista</b-button>
       </b-row>
-    </b-container>
+ 
     <!--Cards con Letra e info del artista-->
     <ResultadoBusqueda :cancion="cancion" 
     :bioArtista="bio"
     :nombreArtista="name"
-    
       />
+   </b-container>
 
   </div>
 </template>
@@ -73,17 +76,7 @@ export default {
  
 };
 </script>
-<style lang="scss">
-.busqueda__inputs{
-  margin: 5% 0 5% 0;
-}
-  .busqueda__lyric{
-    text-align: center;
-   
-  }
-  .busqueda__botones{
-    justify-content: center;
-    margin-bottom: 2%;
-  }
+<style src="@/assets/scss/main.scss"  lang="scss">
+
   
 </style>

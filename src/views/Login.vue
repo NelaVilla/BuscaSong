@@ -1,44 +1,64 @@
 <template>
-    <div id="login">
-        <!--Inputs email/contraseña -->
-        <b-container >
-            <b-col>
-    <b-img center src="https://picsum.photos/125/125/?image=58" alt="Center image"></b-img>
+  <div id="login">
+    <!--Inputs email/contraseña -->
+    <b-container class="ingreso">
+      <b-col>
+        <!--Foto Ingreso--->
+        <b-img
+          class="ingreso__logo"
+          center
+          src="https://image.flaticon.com/icons/svg/3048/3048396.svg"
+          alt="Center image"
+        ></b-img>
 
-     <label for="Email" > Email</label>
-      <b-form-input type="text" v-model="email"></b-form-input>
-   <label for="contraseña">Contraseña</label>
-      <b-form-input type="password"  v-model="password"></b-form-input>
-    </b-col>
+        <!--Inputs de login--->
+        <label for="Email" label-align class="ingreso__titulo"> Email</label>
+        <b-form-input
+          class="ingreso__input"
+          type="text"
+          v-model="email"
+        ></b-form-input>
+        <label for="contraseña" class="ingreso__titulo">Contraseña</label>
+        <b-form-input
+          class="ingreso__input"
+          type="password"
+          v-model="password"
+          v-b-hover
+        ></b-form-input>
+
+        <!---Botones de login--->
+        <b-row class="ingreso__botones" align-h="center">
+          <b-button
+            variant="outline-primary"
+            @click="ingresar()"
+            class="ingreso__botones--boton"
+            >Buscar</b-button
+          >
+        </b-row>
+      </b-col>
       <!--Boton Login-->
-       <b-row class="busqueda__botones" align-h="center">
-      <b-button variant="outline-primary" @click="ingresar()" class="busqueda__boton"
-        >Buscar</b-button>
-      </b-row>
-      
-        </b-container>
-    </div>
+    </b-container>
+  </div>
 </template>
 
 <script>
-import Firebase from 'firebase'
+import Firebase from "firebase";
 
 export default {
-
-    name:'login',
-    components:{
-        Firebase
-    },
-    data(){
-        return{
-            email:'',
-            password:''
-        }
-    },
-    methods: {
-        ingresar(){
-            console.log('hola')
-            /*
+  name: "login",
+  components: {
+    Firebase,
+  },
+  data() {
+    return {
+      email: "",
+      password: "",
+    };
+  },
+  methods: {
+    ingresar() {
+      console.log("hola");
+      /*
             Firebase.auth().signInWithEmailAndPassword(this.email, this.password)
             .then(
                 user =>{
@@ -51,9 +71,9 @@ export default {
                     alert('No te haz loggeado')
                     console.log(reject.message)
  */
-                }
-    }
-        }
-    
-
+    },
+  },
+};
 </script>
+<style src="@/assets/scss/main.scss"  lang="scss">  
+</style>

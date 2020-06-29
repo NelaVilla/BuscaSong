@@ -2,9 +2,6 @@
 @import 'abstracts/_variables';
 @import 'abstracts/_mixins';
 
-@import 'vendors/bootstrap';
-
-
 @import 'base/_resets';
 @import 'base/_typography';
 
@@ -16,8 +13,6 @@
 
 @import 'pages/_app';
 @import 'pages/_cancionesFav';
-@import 'page/_home';
+@import 'pages/_home';
 @import 'pages/_login';
 
-@import 'themes/_admin';
-@import 'themes/_theme';

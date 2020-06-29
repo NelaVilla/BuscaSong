@@ -1,0 +1,27 @@
+#barrabusqueda{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.busqueda__inputs{
+    margin: 5% 0 2% 0;
+
+    &--input{
+    font-family: $over-lock;
+    text-align: center;
+    color: $gris-texto;
+    }
+    &__lyric{
+        text-align: center;
+    }
+     
+}
+.busqueda__botones{
+    font-display: flex;
+    margin-bottom: 5%;
+}
+    
+      
+     
+
+    
