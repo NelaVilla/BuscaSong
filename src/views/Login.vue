@@ -22,17 +22,16 @@
         <b-form-input
           class="ingreso__input"
           type="password"
-          v-model="password"
-        
+          v-model="password"        
         ></b-form-input>
 
         <!---Botones de login--->
         <b-row class="ingreso__botones" align-h="center">
           <b-button
             variant="outline-primary"
-            @click="ingresar()"
+            @click="login()"
             class="ingreso__botones--boton"
-            >Buscar</b-button
+            >Ingresar</b-button
           >
         </b-row>
       </b-col>
@@ -42,7 +41,7 @@
 </template>
 
 <script>
-import firebase from 'firebase'
+import Firebase from 'firebase'
 export default {
   name:'login',
   data(){
@@ -52,12 +51,12 @@ export default {
     }
   },
   methods:{
-   ingresar(){
-       firebase.auth().signInWithEmailAndPassword(this.email, this.password)
+   login(){
+       Firebase.auth().signInWithEmailAndPassword(this.email, this.password)
             .then(user =>{
                     alert('Fuiste Loggeado')
-                    console.log(Firebase.auth().currentUser)
                     this.$router.push({ name: 'Home' });
+                    this.$store.dispatch('setLogin')
                 }),
                 reject =>{
                     alert('No te haz loggeado')

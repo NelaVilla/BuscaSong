@@ -16,12 +16,12 @@
     }
      
 }
-.busqueda__botones{
-    font-display: flex;
-    margin-bottom: 5%;
+.busqueda__col{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
 }
-    
-      
-     
 
+@media only screen and (max-width: 600px) {
+}
     

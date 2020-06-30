@@ -9,16 +9,27 @@ export default new Vuex.Store({
     state: {
       cancion:'',
       name:'',
-      bio:''
+      bio:'',
+      usuarioLogeado:false
     },
     mutations: {
       SET_CANCION(state, cancion) {
         state.cancion = cancion;
 
       },
-      SET_DATOSARTIST(state, name, bio) {
-        state.name = name;
-        state.bio = bio;
+      SET_DATOSARTIST(state, datos) {
+        state.name = datos.name;
+        state.bio = datos.bio;
+      },
+      SET_LOGIN(state){
+        state.usuarioLogeado = true;
+      },
+      CAMBIO_USER(state){
+        state.usuarioLogeado = !state.usuarioLogeado;
+        return state.usuarioLogeado;
+      },
+      SALIR_USUARIO(state){
+        state.usuarioLogeado = false
       }
     },
     actions: {
@@ -34,9 +45,9 @@ export default new Vuex.Store({
           })
           .then((result) => {
             console.log(result.data.lyrics)
-            commit('SET_CANCION', {
-              cancion: result.data.lyrics
-            })
+            let cancion = result.data.lyrics
+            commit('SET_CANCION', cancion
+            )
           })
           .catch((error) => {
             console.log(error);
@@ -57,14 +68,28 @@ export default new Vuex.Store({
           )
           .then((result) => {
             console.log(result.data.artist);
-            commit('SET_DATOSARTIST', {
-              name: result.data.artist.name, 
-              bio: result.data.artist.bio.summary
-            })
+            let datos = result.data.artist
+            commit('SET_DATOSARTIST', datos )
           });
 
 
+      },
+      setLogin({
+        commit
+      }){
+        commit('SET_LOGIN')
+      },
+      salirUsuario({commit}){
+        Firebase.auth()
+        .signOut()
+        .then(() => {
+          commit('SALIR_USUARIO')
+          alert("Te haz deslogeado");
+          this.$router.push({ name: "Login" });
+        });
+        
       }
+
     },
     /* getters: {
       bio: (state) =>state.datosArtist.s

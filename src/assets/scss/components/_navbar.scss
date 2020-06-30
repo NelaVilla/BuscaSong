@@ -1,11 +1,13 @@
 .navbar{
     background-color: $agua-mar;
-    color: $gris-titulos;
+    color: $gris-navbar;
     font-family: $over-lock;
     font-size: $large;
     display: flex;
     justify-content: center;
     align-items: center;
+    font-weight: bold;
+
     &__logo{
     width: 4.5em;
     height: 4.5em;

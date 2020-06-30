@@ -36,7 +36,9 @@ const routes = [
     path: "/editar",
     name: "Editar",
     component: Editar,
-   
+    meta: {
+      login: true,
+    }, 
   },
   {
     path :"*",
@@ -62,7 +64,7 @@ router.beforeEach((to, from, next) => {
   let user = Firebase.auth().currentUser;
   let authRequired = to.matched.some((route) => route.meta.login);
   if (!user && authRequired) {
-    next("login");
+    next("Login");
   } else if (user && !authRequired) {
     next("Home");
   } else {

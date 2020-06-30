@@ -14,9 +14,9 @@
 
     <b-collapse id="nav-collapse" is-nav>
       <b-navbar-nav>
-       <b-nav-item :to="{ name: 'Login' }">Login</b-nav-item>
-          <b-nav-item :to="{ name: 'Home' }">Home</b-nav-item>
-          <b-nav-item :to="{ name: 'Favoritos' }">Tus Favoritas</b-nav-item>
+       <b-nav-item  class="navbar__link"  v-show="!usuarioLogeado" :to="{ name: 'Login' }">Login</b-nav-item>
+          <b-nav-item class="navbar__link" :to="{ name: 'Home' }">Busca una Canción</b-nav-item>
+          <b-nav-item class="navbar__link" :to="{ name: 'Favoritos' }">Tus Favoritas</b-nav-item>
           <b-nav-item :to="{ name: 'Editar' }">Editas tu Favs</b-nav-item>
       </b-navbar-nav>
 
@@ -24,8 +24,9 @@
       <b-navbar-nav class="ml-auto">
         <b-nav-form>
             <b-button
+            v-show=" usuarioLogeado"
               size="sm"
-              class="my-2 my-sm-0"
+              class="my-2 my-sm-0 navbar__boton"
               type="submit"
               @click="logout()"
               >Cerrar Sesión</b-button
@@ -41,20 +42,20 @@
 
 <script>
 import Firebase from "firebase";
+import{mapState} from 'vuex'
 export default {
+
   methods: {
     logout() {
-      Firebase.auth()
-        .signOut()
-        .then(() => {
-          alert("Te haz deslogeado");
-          this.$router.push({ name: "Login" });
-        });
-    },
+      this.$store.dispatch('salirUsuario')
+         },
   },
+  computed:{
+     ...mapState(['usuarioLogeado']),
+  }
 };
 </script>
-<style src="@/assets/scss/main.scss"  lang="scss">
+<style src="@/assets/scss/main.scss"  lang="scss" scooped >
 
 </style>
 

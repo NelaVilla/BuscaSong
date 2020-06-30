@@ -1,7 +1,14 @@
-.busqueda__botones--boton{
-    background-color: aquamarine;
-    border-radius: 5px;
+.botones{
+    background-color: $menta;
+    border-radius: 10px;
     font-family: $over-lock;
-    color: $ultimo-color;
-    margin: 2%;
+    color: $gris-navbar;
+    margin: 3px;
+    text-align: center;
+    align-self: center;
+}
+.botones:hover{
+    background-color: $pistacho;
+    color: $gris-texto;
+    border: none;
 }
