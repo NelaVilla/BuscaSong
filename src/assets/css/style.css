@@ -42,13 +42,15 @@
   font-size: 20px;
 }
 
-.inputA:hover {
-  color: #d1eecc;
+.inputA:focus {
+  border-color: #d1eecc;
+  box-shadow: 0 0 0 0.2rem #d1eecc;
+  outline: 0;
 }
 
 .navbar {
   background-color: #76dbd1;
-  color: #e0e7e9;
+  color: #ffffff;
   font-family: "Overlock", cursive;
   font-size: 20px;
   display: flex;
@@ -57,35 +59,36 @@
   font-weight: bold;
 }
 .navbar__logo {
-  width: 4.5em;
-  height: 4.5em;
+  width: 4.5rem;
+  height: 4rem;
 }
 
-.resultado__card {
+.resultado__cards {
+  margin-bottom: 10%;
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: center;
 }
-.resultado__card--titulo {
+.resultado__cards--titulo {
   font-family: "Libre Baskerville", serif;
   font-size: 35px;
   text-align: center;
-  background-color: #d1eecc;
 }
-.resultado__card--logo {
+.resultado__cards--logo {
   width: 30px;
   height: 30px;
   color: #57a99a;
 }
-.resultado__card--texto {
+.resultado__cards--texto {
   font-family: "Overlock", cursive;
   font-size: 20px;
   text-align: center;
+  line-height: normal;
 }
 
-pre {
-  font-family: "Overlock", cursive;
+.scroll {
+  max-height: 18rem;
+  overflow-y: scroll;
 }
 
 #app {

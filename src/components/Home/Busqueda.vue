@@ -29,6 +29,7 @@
     <ResultadoBusqueda :cancion="cancion" 
     :bioArtista="bio"
     :nombreArtista="name"
+    :songName="lyric"
       />
    </b-container>
 
@@ -73,6 +74,6 @@ export default {
  
 };
 </script>
-<style src="@/assets/scss/main.scss" lang="scss" scooped >
+<style src="@/assets/scss/main.scss" lang="scss" >
   
 </style>

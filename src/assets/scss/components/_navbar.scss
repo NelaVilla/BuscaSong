@@ -1,6 +1,6 @@
 .navbar{
     background-color: $agua-mar;
-    color: $gris-navbar;
+    color: #ffffff;
     font-family: $over-lock;
     font-size: $large;
     display: flex;
@@ -9,8 +9,8 @@
     font-weight: bold;
 
     &__logo{
-    width: 4.5em;
-    height: 4.5em;
+    width: 4.5rem;
+    height: 4rem;
 }
 
 }

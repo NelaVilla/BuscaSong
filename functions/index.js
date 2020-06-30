@@ -6,11 +6,11 @@ const cors = require('cors')
 const router = express();
 router.use(cors({ origin: true }))
 //Coleccion Canciones Favoritas
-router.get("/usuarios/:user", async (req, res) => {
-  const user = await admin
+router.get("/usuarios/:usuario", async (req, res) => {
+  const usuario = await admin
     .firestore()
     .collection("usuarios")
-    .doc(req.params.user)
+    .doc(req.params.usuario)
     .get().then((doc) => {
     if (doc.exists) {
         console.log("Document data:", doc.data());
@@ -20,7 +20,7 @@ router.get("/usuarios/:user", async (req, res) => {
         return {}
     }
   });
-  res.send(user);
+  res.send(usuario);
 });
 router.get("/usuarios", async (req, res) => {
   const usuarios = await admin
@@ -28,23 +28,23 @@ router.get("/usuarios", async (req, res) => {
     .collection("usuarios")
     .get();
   var lista = [];
-  usuarios.docs.forEach(doc => {
+ usuarios.docs.forEach(doc => {
     lista.push({ id: doc.id, data: doc.data() });
   });
   res.send(lista);
 });
-router.post("/user", async (req, res) => {
-  const user = await admin
+router.post("/usuario", async (req, res) => {
+  const usuario = await admin
     .firestore()
     .collection("usuarios")
     .add(req.body)
     .then(docRef => {
       return docRef.id
     });
-  res.send(user);
+  res.send(usuarios);
 });
-router.put("/user/:id", async (req, res) => {
-  const user = await admin
+router.put("/usuario/:id", async (req, res) => {
+  const usuario = await admin
     .firestore()
     .collection("usuarios")
     .doc(req.params.id)
@@ -52,22 +52,19 @@ router.put("/user/:id", async (req, res) => {
     if (doc.exists) {
         console.log("Document data:", doc.data());
         return doc.data()
-    } else { 
+    } else {
         console.log("No such document!");
         return {}
     }
   });
-  res.send(user);
+  res.send(usuario);
 });
-router.delete("/user/:id", async (req, res) => {
-  const user = await admin
+router.delete("/usuario/:id", async (req, res) => {
+  const usuario = await admin
     .firestore()
     .collection("usuarios")
     .doc(req.params.id)
     .delete();
-  res.send(user);
+  res.send(usuario);
 });
-
 exports.usuarios = functions.https.onRequest(router);
-
-

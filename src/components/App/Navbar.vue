@@ -17,7 +17,7 @@
        <b-nav-item  class="navbar__link"  v-show="!usuarioLogeado" :to="{ name: 'Login' }">Login</b-nav-item>
           <b-nav-item class="navbar__link" :to="{ name: 'Home' }">Busca una Canción</b-nav-item>
           <b-nav-item class="navbar__link" :to="{ name: 'Favoritos' }">Tus Favoritas</b-nav-item>
-          <b-nav-item :to="{ name: 'Editar' }">Editas tu Favs</b-nav-item>
+          <!-- <b-nav-item :to="{ name: 'Editar' }">Editas tu Favs</b-nav-item> -->
       </b-navbar-nav>
 
       <!-- Right aligned nav items -->
@@ -56,7 +56,7 @@ export default {
   }
 };
 </script>
-<style src="@/assets/scss/main.scss"  lang="scss" scooped >
+<style src="@/assets/scss/main.scss"  lang="scss"  >
 
 </style>
 

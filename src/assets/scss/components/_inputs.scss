@@ -5,6 +5,8 @@
         font-size: $large;
         
     }
-.inputA:hover{
-    color: $pistacho;
+.inputA:focus{ 
+    border-color:$pistacho;
+    box-shadow: 0 0 0 0.2rem $pistacho;
+    outline: 0;
 }

@@ -10,12 +10,12 @@ export default new Vuex.Store({
       cancion:'',
       name:'',
       bio:'',
-      usuarioLogeado:false
+      usuarioLogeado:false,
+      favoritos: []
     },
     mutations: {
       SET_CANCION(state, cancion) {
         state.cancion = cancion;
-
       },
       SET_DATOSARTIST(state, datos) {
         state.name = datos.name;
@@ -30,10 +30,26 @@ export default new Vuex.Store({
       },
       SALIR_USUARIO(state){
         state.usuarioLogeado = false
+      },
+      SET_FAVORITO(state, payload){
+        state.favoritos.push(payload)
       }
     },
     actions: {
-
+      setFavorito({commit}, payload){
+        let favoritas ={
+          cancionfavorita: [payload]
+        };
+        let email = Firebase.auth().currentUser.email;
+        let data = {
+          email, favoritas
+        };
+        axios.post('https://us-central1-search-canciones.cloudfunctions.net/usuarios/user', data)
+        commit('SET_FAVORITO', payload).then((data)=>{
+          console.log(data)
+        })
+      
+    },
       setCancion({
         commit
       }, payload) {
@@ -71,7 +87,6 @@ export default new Vuex.Store({
             let datos = result.data.artist
             commit('SET_DATOSARTIST', datos )
           });
-
 
       },
       setLogin({

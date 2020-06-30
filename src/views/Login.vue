@@ -67,4 +67,4 @@ export default {
   }
 }
 </script>
-<style src="@/assets/scss/main.scss" lang="scss" scooped></style>
+<style src="@/assets/scss/main.scss" lang="scss" scope></style>
