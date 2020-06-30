@@ -4,6 +4,7 @@ import Home from "../views/Home.vue";
 import Login from "../views/Login.vue";
 import Favoritos from "../views/Favoritos.vue";
 import Editar from "../views/Editar.vue"
+import Firebase from 'firebase'
 
 
 Vue.use(VueRouter);
@@ -26,6 +27,9 @@ const routes = [
     path: "/favoritos",
     name: "Favoritos",
     component: Favoritos,
+     meta: {
+      login: true,
+    }, 
     
   },
   {
@@ -52,18 +56,18 @@ const router = new VueRouter({
   mode: "history",
   base: process.env.BASE_URL,
   routes
-});/* 
-  router.beforeEach((to, from, next) => {
+});
+
+router.beforeEach((to, from, next) => {
   let user = Firebase.auth().currentUser;
-  console.log(user)
-  let authRequired = to.matched.some(route => route.meta.login);
+  let authRequired = to.matched.some((route) => route.meta.login);
   if (!user && authRequired) {
-  next('login'); //como el rout.push
-  } else if (user && !authRequired) { //cuando usuario esta logeado pero quiere relogearse
-  next('home');
-  } else { //ruta publica y para entrar a login
-  next();
+    next("login");
+  } else if (user && !authRequired) {
+    next("Home");
+  } else {
+    next();
   }
-  });
-  */
+});
+   
 export default router;

@@ -1,6 +1,7 @@
 import Vue from "vue";
 import Vuex from "vuex";
 import axios from 'axios'
+import Firebase from 'firebase'
 
 Vue.use(Vuex);
 

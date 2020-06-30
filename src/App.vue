@@ -6,6 +6,7 @@
 
 <script>
 // @ is an alias to /src
+import Firebase from 'firebase'
 import Navbar from "@/components/App/Navbar.vue";
 import Footer2 from "@/components/App/Footer2.vue";
 

@@ -6,8 +6,8 @@
       <b-card title="Letra de la canción" class="resultado__card--titulo">  
           <b-icon-music-note-list class="resultado__card--logo" ></b-icon-music-note-list>
 
-        <b-card-text class="resultado__card--texto text-center" v-html="cancion">
-           
+        <b-card-text class="resultado__card--texto text-center" >
+           {{cancion}}
         </b-card-text>
       </b-card>
 
@@ -28,7 +28,13 @@
 export default {
     name: 'resultado',
    props:['cancion', 'bioArtista', 'nombreArtista'],
-         
+    mounted(){
+   document.getElementsByClassName('resultado__card--texto').innerHTML = this.cancion
+      document.getElementsByClassName('resultado__card--texto').innerHTML = this.bioArtista
+         document.getElementsByClassName('resultado__card--texto').innerHTML = this.nombreArtistan
+
+
+    }     
    }
    
 </script>

@@ -23,7 +23,7 @@
           class="ingreso__input"
           type="password"
           v-model="password"
-          v-b-hover
+        
         ></b-form-input>
 
         <!---Botones de login--->
@@ -42,38 +42,30 @@
 </template>
 
 <script>
-import Firebase from "firebase";
-
+import firebase from 'firebase'
 export default {
-  name: "login",
-  components: {
-    Firebase,
+  name:'login',
+  data(){
+    return{
+      email:"",
+      password:""
+    }
   },
-  data() {
-    return {
-      email: "",
-      password: "",
-    };
-  },
-  methods: {
-    ingresar() {
-      console.log("hola");
-      /*
-            Firebase.auth().signInWithEmailAndPassword(this.email, this.password)
-            .then(
-                user =>{
+  methods:{
+   ingresar(){
+       firebase.auth().signInWithEmailAndPassword(this.email, this.password)
+            .then(user =>{
                     alert('Fuiste Loggeado')
-                    console.log(Firebase.auth().currentUser.email)
+                    console.log(Firebase.auth().currentUser)
                     this.$router.push({ name: 'Home' });
-
-                },
+                }),
                 reject =>{
                     alert('No te haz loggeado')
                     console.log(reject.message)
- */
-    },
-  },
-};
+    }
+
+} 
+  }
+}
 </script>
-<style src="@/assets/scss/main.scss"  lang="scss">  
-</style>
+<style src="@/assets/scss/main.scss" lang="scss"></style>
