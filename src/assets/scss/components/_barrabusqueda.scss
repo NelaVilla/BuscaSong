@@ -6,11 +6,8 @@
 .busqueda__inputs{
     margin: 5% 0 2% 0;
 
-    &--input{
-    font-family: $over-lock;
-    text-align: center;
-    color: $gris-texto;
-    }
+
+    
     &__lyric{
         text-align: center;
     }
@@ -22,6 +19,5 @@
     flex-direction: column;
 }
 
-@media only screen and (max-width: 600px) {
-}
+
     

@@ -1,6 +1,8 @@
 <template >
     <div id="footer">
+<b-col>
 
+</b-col>
        
 
     </div>
@@ -11,7 +13,7 @@ export default {
     name: "footer"
 }
 </script>
-<style src="@/assets/scss/main.scss"  lang="scss">
+<style src="@/assets/scss/main.scss"  lang="scss" scooped>
 
   
 </style>

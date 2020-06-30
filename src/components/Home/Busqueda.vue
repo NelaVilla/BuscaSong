@@ -8,9 +8,9 @@
       <b-form-input
         v-model="lyric"
         placeholder="Escribe el nombre de la canción"
-        class="busqueda__inputs--input"
+        class="inputA"
       ></b-form-input>
-      <b-button pill class="botones" @click="buscar()" 
+      <b-button pill class="busqueda__botones" @click="buscar()" 
         >Encuentra la canción</b-button>
       </b-col>
 
@@ -18,14 +18,12 @@
       <b-form-input
        v-model="artist"
         placeholder="Escribe el nombre del artista o grupo"
-        class="busqueda__inputs--input"
+        class="inputA"
       ></b-form-input>
-      <b-button pill class="botones" @click="infoArtista()"
+      <b-button pill class="busqueda__botones" @click="infoArtista()"
         >Información sobre el artista</b-button>
       </b-col>
-      </b-row>
-     
-      
+      </b-row>     
  
     <!--Cards con Letra e info del artista-->
     <ResultadoBusqueda :cancion="cancion" 
@@ -75,6 +73,6 @@ export default {
  
 };
 </script>
-<style src="@/assets/scss/main.scss"  lang="scss" scooped >
+<style src="@/assets/scss/main.scss" lang="scss" scooped >
   
 </style>

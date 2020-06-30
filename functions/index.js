@@ -6,11 +6,11 @@ const cors = require('cors')
 const router = express();
 router.use(cors({ origin: true }))
 //Coleccion Canciones Favoritas
-router.get("/cancionesFav/:favorita", async (req, res) => {
-  const favorita = await admin
+router.get("/usuarios/:user", async (req, res) => {
+  const user = await admin
     .firestore()
-    .collection("cancionesFav")
-    .doc(req.params.favorita)
+    .collection("usuarios")
+    .doc(req.params.user)
     .get().then((doc) => {
     if (doc.exists) {
         console.log("Document data:", doc.data());
@@ -20,33 +20,33 @@ router.get("/cancionesFav/:favorita", async (req, res) => {
         return {}
     }
   });
-  res.send(favorita);
+  res.send(user);
 });
-router.get("/cancionesFav", async (req, res) => {
-  const cancionesFav = await admin
+router.get("/usuarios", async (req, res) => {
+  const usuarios = await admin
     .firestore()
-    .collection("cancionesFav")
+    .collection("usuarios")
     .get();
   var lista = [];
-  cancionesFav.docs.forEach(doc => {
+  usuarios.docs.forEach(doc => {
     lista.push({ id: doc.id, data: doc.data() });
   });
   res.send(lista);
 });
-router.post("/favorita", async (req, res) => {
-  const favorita = await admin
+router.post("/user", async (req, res) => {
+  const user = await admin
     .firestore()
-    .collection("cancionesFav")
+    .collection("usuarios")
     .add(req.body)
     .then(docRef => {
       return docRef.id
     });
-  res.send(favorita);
+  res.send(user);
 });
-router.put("/favorita/:id", async (req, res) => {
-  const favorita = await admin
+router.put("/user/:id", async (req, res) => {
+  const user = await admin
     .firestore()
-    .collection("cancionesFav")
+    .collection("usuarios")
     .doc(req.params.id)
     .update(req.body).then((doc) => {
     if (doc.exists) {
@@ -57,17 +57,17 @@ router.put("/favorita/:id", async (req, res) => {
         return {}
     }
   });
-  res.send(favorita);
+  res.send(user);
 });
-router.delete("/favorita/:id", async (req, res) => {
-  const favorita = await admin
+router.delete("/user/:id", async (req, res) => {
+  const user = await admin
     .firestore()
-    .collection("cancionesFav")
+    .collection("usuarios")
     .doc(req.params.id)
     .delete();
-  res.send(favorita);
+  res.send(user);
 });
 
-exports.cancionesFav = functions.https.onRequest(router);
+exports.usuarios = functions.https.onRequest(router);
 
 

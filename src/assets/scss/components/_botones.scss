@@ -1,4 +1,4 @@
-.botones{
+.busqueda__botones{
     background-color: $menta;
     border-radius: 10px;
     font-family: $over-lock;
@@ -6,9 +6,11 @@
     margin: 3px;
     text-align: center;
     align-self: center;
+    border:none;
 }
-.botones:hover{
+.busqueda__botones:hover{
     background-color: $pistacho;
     color: $gris-texto;
     border: none;
 }
+

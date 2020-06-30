@@ -1,0 +1,124 @@
+@import url("https://fonts.googleapis.com/css2?family=Galada&family=Libre+Baskerville:wght@700&family=Overlock:ital@1&display=swap");
+#barrabusqueda {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.busqueda__inputs {
+  margin: 5% 0 2% 0;
+}
+.busqueda__inputs__lyric {
+  text-align: center;
+}
+
+.busqueda__col {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.busqueda__botones {
+  background-color: #57a99a;
+  border-radius: 10px;
+  font-family: "Overlock", cursive;
+  color: #e0e7e9;
+  margin: 3px;
+  text-align: center;
+  align-self: center;
+  border: none;
+}
+
+.busqueda__botones:hover {
+  background-color: #d1eecc;
+  color: #354649;
+  border: none;
+}
+
+.inputA {
+  font-family: "Overlock", cursive;
+  text-align: center;
+  color: #354649;
+  font-size: 20px;
+}
+
+.inputA:hover {
+  color: #d1eecc;
+}
+
+.navbar {
+  background-color: #76dbd1;
+  color: #e0e7e9;
+  font-family: "Overlock", cursive;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+}
+.navbar__logo {
+  width: 4.5em;
+  height: 4.5em;
+}
+
+.resultado__card {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.resultado__card--titulo {
+  font-family: "Libre Baskerville", serif;
+  font-size: 35px;
+  text-align: center;
+  background-color: #d1eecc;
+}
+.resultado__card--logo {
+  width: 30px;
+  height: 30px;
+  color: #57a99a;
+}
+.resultado__card--texto {
+  font-family: "Overlock", cursive;
+  font-size: 20px;
+  text-align: center;
+}
+
+pre {
+  font-family: "Overlock", cursive;
+}
+
+#app {
+  background-color: #ecf4f3;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.ingreso {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 10% 0 10%;
+}
+.ingreso__titulo {
+  font-family: "Libre Baskerville", serif;
+}
+.ingreso__logo {
+  border-radius: 20px;
+  width: 10em;
+  height: 10em;
+}
+.ingreso__input {
+  font-family: "Overlock", cursive;
+  text-align: center;
+  background-color: #d1eecc;
+}
+.ingreso__botones {
+  margin-top: 2%;
+}
+
+/*# sourceMappingURL=style.css.map */

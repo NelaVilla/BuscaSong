@@ -23,6 +23,7 @@
       <!-- Right aligned nav items -->
       <b-navbar-nav class="ml-auto">
         <b-nav-form>
+           <!-- Boton log out -->
             <b-button
             v-show=" usuarioLogeado"
               size="sm"
