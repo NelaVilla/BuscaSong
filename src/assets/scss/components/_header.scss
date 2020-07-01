@@ -1,0 +1,32 @@
+.header__bienvenida{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &--logo{
+       background:url('../img/logo-buscasongfinal.png') ;
+       height: 5rem;
+       width: 100%;
+       background-repeat: no-repeat;
+       background-position: center;
+       padding: 10%;
+       margin-bottom: 1%;
+    } 
+    &--texto{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        font-family: $libre-bask;
+        color: $gris-titulos; 
+     & p{
+         text-align: center;
+         font-family: $over-lock;
+         color:$gris-texto ;
+     }
+    
+    }
+    
+
+    }

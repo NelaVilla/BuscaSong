@@ -9,6 +9,7 @@ import FirebaseConfig from "./config/firebaseconfig";
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 
+
 Firebase.initializeApp(FirebaseConfig);
 Vue.use(BootstrapVue)
 Vue.use(IconsPlugin)

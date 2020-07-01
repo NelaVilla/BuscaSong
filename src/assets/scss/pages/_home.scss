@@ -3,3 +3,30 @@ body{
     padding: 0;
     
 }
+@media all and (max-width: 699px) and (min-width: 520px) {
+    #encabezado{
+    display: flex;
+    flex-direction: column;  
+    
+    } 
+    .header__bienvenida--logo{
+        width: 50%; 
+        height: 140px ;
+    }
+    #barrabusqueda .busqueda__inputs{
+        display: flex;
+        flex-direction: column;
+        margin-top: 2%;
+    }
+    #resultado .resultado__cards--titulo{
+        display: flex;
+        flex-direction: column;
+        margin-top: 3%;
+    }
+  }
+  @media all and (max-width: 1000px) and (min-width: 700px) {
+    #resultado .resultado__cards--titulo{
+        display: flex;
+        flex-direction: row;
+    }
+  }

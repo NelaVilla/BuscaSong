@@ -2,6 +2,7 @@ import Vue from "vue";
 import Vuex from "vuex";
 import axios from 'axios'
 import Firebase from 'firebase'
+import createPersistedState from "vuex-persistedstate";
 
 Vue.use(Vuex);
 
@@ -24,10 +25,7 @@ export default new Vuex.Store({
       SET_LOGIN(state){
         state.usuarioLogeado = true;
       },
-      CAMBIO_USER(state){
-        state.usuarioLogeado = !state.usuarioLogeado;
-        return state.usuarioLogeado;
-      },
+      
       SALIR_USUARIO(state){
         state.usuarioLogeado = false
       },
@@ -38,7 +36,8 @@ export default new Vuex.Store({
     actions: {
       setFavorito({commit}, payload){
         let favoritas ={
-          cancionesfavoritas: [payload]
+          cancionesfavoritas: payload
+          
         };
         let email = Firebase.auth().currentUser.email;
         let info = {
@@ -68,6 +67,7 @@ export default new Vuex.Store({
           })
           .catch((error) => {
             console.log(error);
+            alert("No se encontró esa canción")
           });
 
       },
@@ -113,6 +113,7 @@ export default new Vuex.Store({
         return state.datosArtist.filter(dato => dato.name === name)
       },
     }, */
-      modules: {}
+      modules: {},
+      plugins: [createPersistedState()]
     
 })

@@ -23,6 +23,7 @@
 
           <!--Card con cancion-->
           <b-card-text class="resultado__cards--texto text-center scroll">
+            <h3 class="resultado__cards--subtitulo" ><strong>{{songName}}</strong></h3> 
             <pre class="resultado__cards--texto" id="busqueda__cancion">
             {{ cancion }}
          </pre
@@ -36,7 +37,7 @@
           class="resultado__cards--titulo"
         >
           <b-card-text class="resultado__cards--texto">
-            <h4>{{ nombreArtista }}</h4>
+            <h4 class="resultado__cards--subtitulo"><strong>{{ nombreArtista }}</strong></h4>
           </b-card-text>
 
           <b-card-text

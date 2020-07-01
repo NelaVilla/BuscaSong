@@ -2,7 +2,6 @@
   <div id="barrabusqueda">
     <!--Inputs y botons para buscar-->
     <b-container>
-     
       <b-row class="busqueda__inputs" >
         <b-col class="busqueda__col">
       <b-form-input
@@ -74,6 +73,6 @@ export default {
  
 };
 </script>
-<style src="@/assets/scss/main.scss" lang="scss" >
+<style src="@/assets/scss/main.scss" lang="scss"  >
   
 </style>

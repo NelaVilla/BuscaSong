@@ -6,10 +6,12 @@
    
 
     &--titulo{
-     font-family: $libre-bask;
+     font-family: $galada;
      font-size: $xx-large;
      text-align: center;
-
+    }
+    &--subtitulo{
+        font-family: $galada;
     }
     &--logo{
         width: 30px;

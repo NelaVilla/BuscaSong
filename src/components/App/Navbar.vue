@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="Navbar">
        <b-navbar toggleable="lg" class="navbar" type="dark">
    <b-navbar-brand>
             <img
@@ -45,6 +45,7 @@
 import Firebase from "firebase";
 import{mapState} from 'vuex'
 export default {
+  name:"Navbar",
 
   methods: {
     logout() {

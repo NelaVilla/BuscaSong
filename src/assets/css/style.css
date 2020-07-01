@@ -35,6 +35,35 @@
   border: none;
 }
 
+.header__bienvenida {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.header__bienvenida--logo {
+  background: url("../img/logo-buscasongfinal.png");
+  height: 5rem;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 10%;
+  margin-bottom: 1%;
+}
+.header__bienvenida--texto {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: "Libre Baskerville", serif;
+  color: #6c7a89;
+}
+.header__bienvenida--texto p {
+  text-align: center;
+  font-family: "Overlock", cursive;
+  color: #354649;
+}
+
 .inputA {
   font-family: "Overlock", cursive;
   text-align: center;
@@ -54,7 +83,6 @@
   font-family: "Overlock", cursive;
   font-size: 20px;
   display: flex;
-  justify-content: center;
   align-items: center;
   font-weight: bold;
 }
@@ -70,9 +98,12 @@
   justify-content: center;
 }
 .resultado__cards--titulo {
-  font-family: "Libre Baskerville", serif;
+  font-family: "Galada", cursive;
   font-size: 35px;
   text-align: center;
+}
+.resultado__cards--subtitulo {
+  font-family: "Galada", cursive;
 }
 .resultado__cards--logo {
   width: 30px;
@@ -100,6 +131,35 @@ body {
   padding: 0;
 }
 
+@media all and (max-width: 699px) and (min-width: 520px) {
+  #encabezado {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .header__bienvenida--logo {
+    width: 50%;
+    height: 140px;
+  }
+
+  #barrabusqueda .busqueda__inputs {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2%;
+  }
+
+  #resultado .resultado__cards--titulo {
+    display: flex;
+    flex-direction: column;
+    margin-top: 3%;
+  }
+}
+@media all and (max-width: 1000px) and (min-width: 700px) {
+  #resultado .resultado__cards--titulo {
+    display: flex;
+    flex-direction: row;
+  }
+}
 .ingreso {
   display: flex;
   justify-content: center;
