@@ -10,15 +10,31 @@ En la siguiente vista, llamada “Canciones favoritas”, estarán almacenadas l
 
 ## Tipos de fuentes y tamaño
 
-- Museo Moderno: Light 300, Bold 700
-- Roboto Condensed: Light italic 300
+- Libre Baskerville
+- Overlock
+- Galada
 
 ## Colores
 
-- \$gris-fondo: #ecf4f3
-- \$pistacho: #d1eecc
-- \$agua-mar: #76dbd1
-- \$menta: #57a99a
+- \gris-fondo: #ecf4f3
+- \pistacho: #d1eecc
+- \agua-mar: #76dbd1
+- \menta: #57a99a
+- \gris-texto: #354649;
+- \gris-titulos: #6c7a89;
+- \gris-navbar: #e0e7e9;
+- \ultimo-color: #a3c6c4;
+
+## Tamaño Fuentes
+- \xxxxx-large: 50px ;
+- \xxxx-large: 45px ;
+- \xxx-large: 40px ;
+- \xx-large: 35px ;
+- \x-large: 30px ;
+- \large: 20px ;
+- \medium: 16px ;
+- \small: 14px ;
+- \x-small: 12px ;
 
 # Comandos y Framework
 
@@ -64,8 +80,8 @@ Boostrap-vue
 
 ### API utilizadas
 
-https://lyricsovh.docs.apiary.io/
-https://www.last.fm/api/show/artist.getInfo
+- [Api lyrics.ovh](https://lyricsovh.docs.apiary.io/)
+- [Last FM api](https://www.last.fm/api/show/artist.getInfo)
 
 ### Customize configuration
 
