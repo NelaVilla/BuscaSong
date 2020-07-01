@@ -8,7 +8,7 @@ En la siguiente vista, llamada “Tus favoritas”, estarán almacenadas las can
 
 ## Guía de estilos
 
-## Tipos de fuentes y tamaño
+## Tipos de fuentes
 
 - Libre Baskerville
 - Overlock
