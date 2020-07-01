@@ -3,3 +3,10 @@
     font-size: $x-large;
     
 }
+.scroll{
+    max-height: 15rem;
+    overflow-y: scroll;
+}
+td{
+    font-size: $small;
+}

@@ -12,19 +12,19 @@
             <th scope="col">Nombre del Artista o Grupo</th>
             <th scope="col">Canción</th>
             <th scope="col">Biografía </th>
-            <th scope="col">Editar/Eliminar</th>
+           
             </tr>
         </thead>
 
         <tbody>   
-          <tr v-for="(favorito,i) in favoritos" :key="i">
+          <tr v-for="(favorito,i) in favoritos.cancionesFav" :key="i">
             <td>{{i+1}}</td>
             <td>{{favorito.songname}}</td>
             <td>{{favorito.nombreArtista}}</td>
-            <td>{{favorito.cancion}}</td>
-            <td>{{favorito.bioArtista}}</td>
+            <td class="scroll">{{favorito.cancion}}</td>
+            <td class="scroll">{{favorito.bioArtista}}</td>
             <td> <!-- <button class="btn btn-info">Editar</button> -->
-            <button class="btn btn-danger" @click="eliminar(favorito[i])">Eliminar</button></td>
+           <!--  <button class="btn btn-danger" @click="eliminar(favorito[i])">Eliminar</button>--></td> 
             </tr>
         </tbody>
       </table>

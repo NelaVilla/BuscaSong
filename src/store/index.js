@@ -32,9 +32,9 @@ export default new Vuex.Store({
       SET_FAVORITO(state, favs){
         state.favoritos = favs;
       },
-      ELIMINARFAV(state, nuevoFav){
+     /*  ELIMINARFAV(state, nuevoFav){
         state.favoritos = nuevoFav
-      }
+      } */
       
     },
     actions: {
@@ -58,9 +58,11 @@ export default new Vuex.Store({
           commit('SET_FAVORITO', favs)
         })
       
+    }else{
+      alert("ya se ingreso una canción con ese nombre")
     }
   },
-    eliminarFav({commit, state}){
+   /*  eliminarFav({commit, state}){
       let favoritos = state.favoritos
       let nuevoFav =  favoritos.splice(favoritos.filter(f => f.songname !== f.songname))
 
@@ -72,7 +74,7 @@ export default new Vuex.Store({
     axios.post("https://us-central1-buscasong.cloudfunctions.net/usuarios/usuario", info).then((data) => {
       commit("eliminarFav", nuevoFav);
     });
-    },
+    }, */
       setCancion({
         commit
       }, payload) {
@@ -110,6 +112,10 @@ export default new Vuex.Store({
             console.log(result.data.artist);
             let datos = result.data.artist
             commit('SET_DATOSARTIST', datos )
+          })
+          .catch((error) => {
+            console.log(error);
+            alert("No se ha encontrado este artista")
           });
 
       },

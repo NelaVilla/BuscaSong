@@ -5,33 +5,16 @@
 }
 .busqueda__inputs{
     margin: 5% 0 2% 0;
-
-
     
     &__lyric{
         text-align: center;
     }
      
 }
-.busqueda__col{
+.busqueda__col{ 
     display: flex;
     justify-content: center;
     flex-direction: column;
-}
-.busqueda__botones{
-    background-color: $menta;
-    border-radius: 10px;
-    font-family: $over-lock;
-    color: $gris-navbar;
-    margin: 3px;
-    text-align: center;
-    align-self: center;
-    border:none;
-}
-.busqueda__botones:hover{
-    background-color: $pistacho;
-    color: $gris-texto;
-    border: none;
 }
 
 

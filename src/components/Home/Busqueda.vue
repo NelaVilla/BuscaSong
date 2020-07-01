@@ -73,6 +73,6 @@ export default {
  
 };
 </script>
-<style src="@/assets/scss/main.scss" lang="scss"  >
+<style src="@/assets/scss/main.scss" lang="scss" scope >
   
 </style>
