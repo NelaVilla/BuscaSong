@@ -1,5 +1,6 @@
 {
   "projects": {
-    "default": "search-canciones"
+    "default": "search-canciones",
+    "no": "buscasong"
   }
 }

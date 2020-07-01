@@ -60,7 +60,7 @@ export default {
       let payload = {
         songname: this.songName,
         cancion: this.cancion,
-        bioArtista: this.bioArtista,
+        bioArtista: this.bioArtista.summary,
         nombreArtista: this.nombreArtista
       };
         this.$store.dispatch('setFavorito', payload)

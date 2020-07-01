@@ -38,15 +38,16 @@ export default new Vuex.Store({
     actions: {
       setFavorito({commit}, payload){
         let favoritas ={
-          cancionfavorita: [payload]
+          cancionesfavoritas: [payload]
         };
         let email = Firebase.auth().currentUser.email;
-        let data = {
+        let info = {
           email, favoritas
         };
-        axios.post('https://us-central1-search-canciones.cloudfunctions.net/usuarios/user', data)
-        commit('SET_FAVORITO', payload).then((data)=>{
+        axios.post('https://us-central1-buscasong.cloudfunctions.net/usuarios/usuario', info)
+       .then((data)=>{
           console.log(data)
+          commit('SET_FAVORITO', payload)
         })
       
     },

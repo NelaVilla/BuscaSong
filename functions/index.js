@@ -5,12 +5,15 @@ const express = require('express');
 const cors = require('cors')
 const router = express();
 router.use(cors({ origin: true }))
+router.get("prueba", async (req, res) => {
+  res.send('probando..');
+});
 //Coleccion Canciones Favoritas
-router.get("/usuarios/:usuario", async (req, res) => {
+router.get("/usuarios/:id", async (req, res) => {
   const usuario = await admin
     .firestore()
     .collection("usuarios")
-    .doc(req.params.usuario)
+    .doc(req.params.id)
     .get().then((doc) => {
     if (doc.exists) {
         console.log("Document data:", doc.data());
@@ -22,28 +25,18 @@ router.get("/usuarios/:usuario", async (req, res) => {
   });
   res.send(usuario);
 });
-router.get("/usuarios", async (req, res) => {
-  const usuarios = await admin
-    .firestore()
-    .collection("usuarios")
-    .get();
-  var lista = [];
- usuarios.docs.forEach(doc => {
-    lista.push({ id: doc.id, data: doc.data() });
-  });
-  res.send(lista);
-});
 router.post("/usuario", async (req, res) => {
   const usuario = await admin
     .firestore()
     .collection("usuarios")
-    .add(req.body)
-    .then(docRef => {
-      return docRef.id
+    .doc(req.body.email)
+    .set(req.body.favoritas) //falta ponera algo aca
+    .then(() => {
+      console.log('vamos bien') 
     });
-  res.send(usuarios);
+    res.send(usuario)
 });
-router.put("/usuario/:id", async (req, res) => {
+/*  router.put("/usuario/:id", async (req, res) => {
   const usuario = await admin
     .firestore()
     .collection("usuarios")
@@ -66,5 +59,5 @@ router.delete("/usuario/:id", async (req, res) => {
     .doc(req.params.id)
     .delete();
   res.send(usuario);
-});
-exports.usuarios = functions.https.onRequest(router);
+}); */
+ exports.usuarios = functions.https.onRequest(router);

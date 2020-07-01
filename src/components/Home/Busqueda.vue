@@ -37,7 +37,7 @@
 </template>
 
 <script>
-import axios from "axios";
+
 import ResultadoBusqueda from './ResultadoBusqueda'
 import { mapState } from 'vuex'
 //import {mapGetters} from 'vuex'
