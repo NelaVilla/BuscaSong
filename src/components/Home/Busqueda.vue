@@ -54,10 +54,10 @@ export default {
       
     };
   },
-
   methods: {
-    buscar() {
-     let payload = {artista : this.artist, titulo:this.lyric, keyFm: "2fb853fec0984769558ca651f33fe319"}
+      buscar() {
+     let titulo = this.lyric.toLowerCase()
+     let payload = {artista : this.artist, titulo, keyFm: "2fb853fec0984769558ca651f33fe319"}
       this.$store.dispatch('setCancion', payload)
     },
 

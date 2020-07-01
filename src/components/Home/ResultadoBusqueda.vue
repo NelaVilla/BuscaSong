@@ -58,13 +58,13 @@ export default {
   methods: {
    //envio datos de favoritos 
     marcarFavorito() {
-      let payload = {
+      let cancionFav = {
         songname: this.songName,
         cancion: this.cancion,
         bioArtista: this.bioArtista.summary,
         nombreArtista: this.nombreArtista
       };
-        this.$store.dispatch('setFavorito', payload)
+        this.$store.dispatch('setFavorito', cancionFav)
     },
   },
 };

@@ -30,7 +30,7 @@ router.post("/usuario", async (req, res) => {
     .firestore()
     .collection("usuarios")
     .doc(req.body.email)
-    .set(req.body.datosGuardar) //falta ponera algo aca
+    .set(req.body.favs) //falta ponera algo aca
     .then(() => {
       console.log('vamos bien') 
     });

@@ -29,26 +29,49 @@ export default new Vuex.Store({
       SALIR_USUARIO(state){
         state.usuarioLogeado = false
       },
-      SET_FAVORITO(state, payload){
-        state.favoritos.push(payload)
+      SET_FAVORITO(state, favs){
+        state.favoritos = favs;
+      },
+      ELIMINARFAV(state, nuevoFav){
+        state.favoritos = nuevoFav
       }
+      
     },
     actions: {
-      setFavorito({commit}, payload){
-        let favoritas ={
-          cancionesfavoritas: payload
-          
-        };
-        let email = Firebase.auth().currentUser.email;
-        let info = {
-          email, favoritas
-        };
-        axios.post('https://us-central1-buscasong.cloudfunctions.net/usuarios/usuario', info)
+      setFavorito({commit,state}, cancionFav){
+        let favoritas = state.favoritos.cancionesFav;
+      
+        if(!favoritas.find( f => f.songname === cancionFav.songname)){
+          favoritas.push(cancionFav);
+           
+        let email =  Firebase.auth().currentUser.email
+        let favs = {
+          cancionesFav : favoritas,
+        }
+        let payload = {
+          email,  favs
+          }
+        
+        axios.post('https://us-central1-buscasong.cloudfunctions.net/usuarios/usuario',payload)
        .then((data)=>{
           console.log(data)
-          commit('SET_FAVORITO', payload)
+          commit('SET_FAVORITO', favs)
         })
       
+    }
+  },
+    eliminarFav({commit, state}){
+      let favoritos = state.favoritos
+      let nuevoFav =  favoritos.splice(favoritos.filter(f => f.songname !== f.songname))
+
+
+    let email = Firebase.auth().currentUser.email;
+    let info = {
+      email, favoritas
+    };    
+    axios.post("https://us-central1-buscasong.cloudfunctions.net/usuarios/usuario", info).then((data) => {
+      commit("eliminarFav", nuevoFav);
+    });
     },
       setCancion({
         commit
