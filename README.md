@@ -1,10 +1,10 @@
 
-# proyecto final DL BuscaSong
+# Proyecto final DL BuscaSong
 
 BuscaSong es un buscador de letras de canciones. Esta enfocado para usuarios que les guste la música y deseen poder almacenar dentro de su cuenta las canciones que sus cantantes o grupos favoritos.
 
-El usuario al entrar a la página será dirigido a la pagina de login en donde deberá ingresar sus datos, una vez logrado esto, es reenviado a la pagina Home en donde encontrará el buscador de letras, este tendrá dos parámetros de búsqueda los cuales son: el nombre del artista o grupo musical y el nombre de la canción, al hacer click al botón aparecerá la letra de la canción, una imagen del grupo musical y además un ícono de corazón, el cual al cliquear hará que la canción se guarde dentro de lista de canciones favoritas..
-En la siguiente vista, llamada “Canciones favoritas”, estarán almacenadas las canciones guardadas con el icono del corazón de la vista “Home”. Y finalmente se puede dirigir a la vista “Editar Canciones” en donde podrá editar el nombre de la canción y/o eliminar canciones, esto se podrá realizar con los respectivos botones “Editar” y “Borrar”. En barra de navegación se observa un boton “LogOut” el cual permite al usuario deslogearse de la pagina web.
+El usuario al entrar a la página será dirigido a la pagina de login en donde deberá ingresar sus datos, una vez logrado esto, es reenviado a la pagina Home en donde encontrará el buscador de letras, este tendrá dos parámetros de búsqueda los cuales son: el nombre del artista o grupo musical y el nombre de la canción, al hacer click al botón aparecerá la letra de la canción y la el cual al cliquear hará que la canción se guarde dentro de lista de canciones favoritas.
+En la siguiente vista, llamada “Tus favoritas”, estarán almacenadas las canciones guardadas con el boton de una nota músical de la vista “Home”.  En barra de navegación se observa un boton “LogOut” el cual permite al usuario deslogearse de la pagina web.
 
 ## Guía de estilos
 
