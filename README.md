@@ -75,7 +75,7 @@ yarn lint
 
 ### Framework utilizado de Vue
 
-- [Boostrap-vue] (https://bootstrap-vue.org/)
+- [Boostrap-vue](https://bootstrap-vue.org/)
 
 ### API utilizadas
 
